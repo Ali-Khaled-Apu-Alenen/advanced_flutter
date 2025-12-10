@@ -29,7 +29,7 @@ class Docimagetransparent extends StatelessWidget {
           right: 0.w,
           child: Text(
             "Best Doctor\n Appointment App",
-            style: TextStyles.font24primary.copyWith(fontSize: 32.sp),
+            style: TextStyles.font24primaryBold.copyWith(fontSize: 32.sp),
             textAlign: TextAlign.center,
           ),
         ),
