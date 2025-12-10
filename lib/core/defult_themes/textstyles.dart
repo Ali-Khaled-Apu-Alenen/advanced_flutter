@@ -1,16 +1,48 @@
+import 'package:advanced_flutter/core/defult_themes/fontwaight.dart';
 import 'package:advanced_flutter/core/defult_themes/themes.dart';
 import 'package:flutter/material.dart';
 
 class TextStyles {
-  static const TextStyle font24primary = TextStyle(
+  static const TextStyle font24primaryBold = TextStyle(
     fontSize: 24,
-    
-    fontWeight: FontWeight.bold,
+
+    fontWeight: FontWaightDefault.bold,
     color: Themes.defaultColor,
   );
   static const TextStyle font12gray = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.bold,
     color: Themes.gray,
+  );
+  static const TextStyle font11grayRegular = TextStyle(
+    fontSize: 11,
+    fontWeight: FontWaightDefault.regular,
+    color: Themes.gray,
+  );
+  static const TextStyle font11BlackMedium = TextStyle(
+    
+    fontSize: 11,
+    fontWeight: FontWaightDefault.medium,
+    color: Colors.black,
+  );
+  static const TextStyle font14textContentGray = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWaightDefault.regular,
+    color: Themes.textContentGray,
+  );
+  static const TextStyle font12textContentGray = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWaightDefault.regular,
+    color: Themes.textContentGray,
+  );
+  static const TextStyle font12TextContentBlueLight = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWaightDefault.regular,
+    color: Themes.textBlueLightColor,
+  );
+  static const TextStyle font16TextSemiBoldWhite = TextStyle(
+    fontSize: 16,
+    color: Colors.white,
+    fontWeight: FontWaightDefault.semiBold,
   );
 }
