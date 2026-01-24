@@ -1,5 +1,6 @@
 import 'package:advanced_flutter/core/di/dependency_injection.dart';
 import 'package:advanced_flutter/core/route/routes.dart';
+import 'package:advanced_flutter/features/home/home_page.dart';
 import 'package:advanced_flutter/features/login/ui/login.dart';
 import 'package:advanced_flutter/features/logic/cubit/login_cubit.dart';
 import 'package:advanced_flutter/features/onboarding/onboarding.dart';
@@ -18,6 +19,8 @@ class AppRouter {
             child: const Login(),
           ),
         );
+      case Routes.homePage:
+        return MaterialPageRoute(builder: (_) => const HomePage());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

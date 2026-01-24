@@ -1,9 +1,8 @@
 import 'package:advanced_flutter/core/networking/api_services.dart';
-import 'package:flutter_complete_project/core/networking/api_error_handler.dart';
-import 'package:flutter_complete_project/core/networking/api_result.dart';
-import 'package:flutter_complete_project/core/networking/api_service.dart';
-import 'package:flutter_complete_project/features/login/data/models/login_request_body.dart';
-import 'package:flutter_complete_project/features/login/data/models/login_response.dart';
+import 'package:advanced_flutter/core/networking/api_error_handler.dart';
+import 'package:advanced_flutter/core/networking/api_results.dart';
+import 'package:advanced_flutter/features/login/data/model/login_request_api.dart';
+import 'package:advanced_flutter/features/login/data/model/login_response_api.dart';
 
 class LoginRepo {
   final ApiService _apiService;
@@ -11,12 +10,13 @@ class LoginRepo {
   LoginRepo(this._apiService);
 
   Future<ApiResult<LoginResponse>> login(
-      LoginRequestBody loginRequestBody) async {
+    LoginRequestBody loginRequestBody,
+  ) async {
     try {
       final response = await _apiService.login(loginRequestBody);
       return ApiResult.success(response);
-    } catch (errro) {
-      return ApiResult.failure(ErrorHandler.handle(errro));
+    } catch (error) {
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 }

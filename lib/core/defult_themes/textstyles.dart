@@ -20,7 +20,6 @@ class TextStyles {
     color: Themes.gray,
   );
   static const TextStyle font11BlackMedium = TextStyle(
-    
     fontSize: 11,
     fontWeight: FontWaightDefault.medium,
     color: Colors.black,
@@ -44,5 +43,20 @@ class TextStyles {
     fontSize: 16,
     color: Colors.white,
     fontWeight: FontWaightDefault.semiBold,
+  );
+  static const TextStyle font13TextDarkBlueRegular = TextStyle(
+    fontSize: 13,
+    color: Themes.textDarkBlue,
+    fontWeight: FontWaightDefault.regular,
+  );
+    static TextStyle font15DarkBlueMedium = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWaightDefault.medium,
+    color: Themes.textDarkBlue,
+  );
+   static TextStyle font14BlueSemiBold = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWaightDefault.semiBold,
+    color: Themes.defaultColor,
   );
 }

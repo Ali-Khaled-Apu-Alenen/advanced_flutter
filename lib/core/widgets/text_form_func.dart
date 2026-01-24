@@ -6,26 +6,38 @@ class TextFormFunc extends StatelessWidget {
   final String hintName;
   final bool? obsecureText;
   final Widget suffixIcon;
-  const TextFormFunc({super.key, required this.hintName, this.obsecureText, required this.suffixIcon});
+  final Function(String?) validate;
+  final TextEditingController? controller;
+  const TextFormFunc({
+    super.key,
+    required this.hintName,
+    this.obsecureText,
+    required this.suffixIcon,
+    required this.validate,
+    required this.controller
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      obscureText: obsecureText??false,
-      
+      obscureText: obsecureText ?? false,
+      validator: (val) {
+        return validate(val);
+      },
+      controller: controller,
       decoration: InputDecoration(
         filled: true,
-        fillColor:Themes.grayTextFill ,
-        suffixIcon:suffixIcon ,
-        contentPadding: EdgeInsets.symmetric(horizontal:20.h,vertical: 17.w ),
+        fillColor: Themes.grayTextFill,
+        suffixIcon: suffixIcon,
+        contentPadding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 17.w),
         enabledBorder: OutlineInputBorder(
-          
           borderRadius: BorderRadius.circular(16),
           borderSide: BorderSide(color: Themes.gray, width: 1.3),
-          
         ),
-          focusedBorder: OutlineInputBorder(  borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(color: Themes.defaultColor, width: 1.1),),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide(color: Themes.defaultColor, width: 1.1),
+        ),
         hintText: hintName,
       ),
     );

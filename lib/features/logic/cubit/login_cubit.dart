@@ -1,3 +1,4 @@
+import 'package:advanced_flutter/core/networking/api_results.dart';
 import 'package:advanced_flutter/features/logic/cubit/login_state.dart';
 import 'package:advanced_flutter/features/login/data/model/login_request_api.dart';
 import 'package:advanced_flutter/features/login/data/repo/login_repo_api.dart';
@@ -10,9 +11,19 @@ class LoginCubit extends Cubit<LoginState> {
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  bool remmmberME = false;
   final formKey = GlobalKey<FormState>();
 
-  void emitLoginStates() async {
+  void emitRememmberMe() {
+    remmmberME = !remmmberME;
+    if (remmmberME) {
+      emit(const LoginState.rememmberMe());
+    } else {
+      emit(const LoginState.norememmberMe());
+    }
+  }
+
+  void emitLoginStates(LoginRequestBody loginRequestBody) async {
     emit(const LoginState.loading());
     final response = await _loginRepo.login(
       LoginRequestBody(
@@ -20,12 +31,15 @@ class LoginCubit extends Cubit<LoginState> {
         password: passwordController.text,
       ),
     );
-    response.when(success: (loginResponse) async {
-      // await saveUserToken(loginResponse.userData?.token ?? '');
-      emit(LoginState.success(loginResponse));
-    }, failure: (error) {
-      emit(LoginState.error(error: error.apiErrorModel.message ?? ''));
-    });
+    response.when(
+      success: (loginResponse) {
+        // await saveUserToken(loginResponse.userData?.token ?? '');
+        emit(LoginState.success(loginResponse));
+      },
+      failure: (error) {
+        emit(LoginState.error(error: error.apiErrorModel.message ?? ''));
+      },
+    );
   }
 
   // Future<void> saveUserToken(String token) async {

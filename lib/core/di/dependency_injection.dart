@@ -3,11 +3,7 @@ import 'package:advanced_flutter/core/networking/dio_factory.dart';
 import 'package:advanced_flutter/features/logic/cubit/login_cubit.dart';
 import 'package:advanced_flutter/features/login/data/repo/login_repo_api.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter_complete_project/core/networking/api_service.dart';
-import 'package:flutter_complete_project/core/networking/dio_factory.dart';
-import 'package:flutter_complete_project/features/home/data/apis/home_api_service.dart';
 import 'package:get_it/get_it.dart';
-
 
 final getIt = GetIt.instance;
 

@@ -7,5 +7,5 @@ class Themes {
   static const Color grayTextFill = Color(0xFFFDFDFF);
   static const Color offWhite = Color(0xFFF5F5F5);
   static const Color textContentGray = Color(0xFF6F6F6F);
-  
+  static const Color textDarkBlue = Color.fromARGB(255, 13, 7, 73);
 }
