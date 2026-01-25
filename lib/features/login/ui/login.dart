@@ -4,8 +4,10 @@ import 'package:advanced_flutter/features/logic/cubit/login_cubit.dart';
 import 'package:advanced_flutter/features/logic/cubit/login_state.dart';
 import 'package:advanced_flutter/features/login/data/model/login_request_api.dart';
 import 'package:advanced_flutter/features/login/ui/widgets/contenttext.dart';
+import 'package:advanced_flutter/features/login/ui/widgets/dont_have_account.dart';
 import 'package:advanced_flutter/features/login/ui/widgets/icons_login_row.dart';
 import 'package:advanced_flutter/features/login/ui/widgets/login_bloc_listener.dart';
+import 'package:advanced_flutter/features/login/ui/widgets/terms_conditions.dart';
 import 'package:advanced_flutter/features/login/ui/widgets/textform.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -84,32 +86,9 @@ class Login extends StatelessWidget {
               SizedBox(height: 20.h),
               IconsLoginRow(),
               SizedBox(height: 20.h),
-              Center(
-                child: Text.rich(
-                  textAlign: TextAlign.center,
-                  //By logging, you agree to our  Terms & Conditions and PrivacyPolicy.
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "By logging, you agree to our ",
-                        style: TextStyles.font11grayRegular,
-                      ),
-                      TextSpan(
-                        text: " Terms & Conditions",
-                        style: TextStyles.font11BlackMedium,
-                      ),
-                      TextSpan(
-                        text: " and \n",
-                        style: TextStyles.font11grayRegular,
-                      ),
-                      TextSpan(
-                        text: "PrivacyPolicy.",
-                        style: TextStyles.font11BlackMedium,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              TermsConditions(),
+              SizedBox(height: 10.h),
+              DontHaveAccount(),
               LoginBlocListener(),
             ],
           ),
