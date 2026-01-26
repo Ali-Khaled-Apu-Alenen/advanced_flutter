@@ -50,6 +50,21 @@ class _nameState extends State<SignUpTextForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 17.h),
+            child: TextFormFunc(
+              hintName: "Name",
+              suffixIcon: Icon(Icons.person),
+              controller: context.read<SignUpCubit>().name,
+              validate: (value) {
+                if (value == null || value.isEmpty) {
+                  return "Please enter valid Name";
+                }
+              },
+            ),
+          ),
+          SizedBox(height: 10.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 17.h),
             child: TextFormFunc(

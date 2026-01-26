@@ -1,10 +1,11 @@
-import 'package:advanced_flutter/core/di/dependency_injection.dart';
-import 'package:advanced_flutter/core/route/route_settings.dart';
-import 'package:advanced_flutter/doc_app.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+import 'main_development.dart' as development;
+import 'main_production.dart' as production;
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await setupGetIt();
-  runApp(DocApp(appRouter: AppRouter()));
+void main() {
+  if (kDebugMode) {
+    development.main();
+  } else {
+    production.main();
+  }
 }

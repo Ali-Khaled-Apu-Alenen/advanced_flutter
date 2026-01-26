@@ -1,6 +1,7 @@
 import 'package:advanced_flutter/core/widgets/buttonwidgetfunc.dart';
 import 'package:advanced_flutter/features/sign_up/logic/sign_up_cubit.dart';
 import 'package:advanced_flutter/features/sign_up/ui/widgets/have_an_account.dart';
+import 'package:advanced_flutter/features/sign_up/ui/widgets/signup_bloc_listener.dart';
 import 'package:advanced_flutter/features/sign_up/ui/widgets/signup_content_text.dart';
 import 'package:advanced_flutter/features/sign_up/ui/widgets/signup_text_form.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,7 @@ class Signup extends StatelessWidget {
                 ),
               ),
               HaveAnAccount(),
+              SignupBlocListener(),
             ],
           ),
         ),

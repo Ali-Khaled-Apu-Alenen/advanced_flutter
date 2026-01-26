@@ -43,7 +43,7 @@ class _ApiService implements ApiService {
     try {
       _value = LoginResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
-      // errorLogger?.logError(e, s, _options);
+      errorLogger?.logError(e, s, _options, _result);
       rethrow;
     }
     return _value;
@@ -60,7 +60,7 @@ class _ApiService implements ApiService {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'auth/signup',
+            'auth/register',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -71,7 +71,7 @@ class _ApiService implements ApiService {
     try {
       _value = SignUpResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
-      // errorLogger?.logError(e, s, _options);
+      errorLogger?.logError(e, s, _options, _result);
       rethrow;
     }
     return _value;

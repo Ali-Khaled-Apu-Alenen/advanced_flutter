@@ -9,10 +9,13 @@ part of 'sign_up_response.dart';
 SignUpResponse _$SignUpResponseFromJson(Map<String, dynamic> json) =>
     SignUpResponse(
       message: json['message'] as String?,
-      userData: json['data'] as String?,
+      userData: SignUpResponse._dataFromJson(json['data']),
       status: json['status'] as bool?,
       code: (json['code'] as num?)?.toInt(),
     );
 
 UserDataResponse _$UserDataResponseFromJson(Map<String, dynamic> json) =>
-    UserDataResponse(json['token'] as String, json['username'] as String);
+    UserDataResponse(
+      token: json['token'] as String?,
+      userName: json['username'] as String?,
+    );
