@@ -19,6 +19,7 @@ class DocApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
         ),
         debugShowCheckedModeBanner: false,
+        onGenerateRoute: appRouter.generateRoute,
         initialRoute: Routes.onboarding,
       ), // typical phone size (width x height)
     );
