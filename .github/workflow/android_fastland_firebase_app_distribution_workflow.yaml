@@ -3,7 +3,7 @@ name: Android Build and Firebase Distribution
 on:
   push:
     branches: 
-    - master
+    - main
 
 jobs:
   build_and_distribute:
