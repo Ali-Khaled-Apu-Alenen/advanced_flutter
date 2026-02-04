@@ -12,7 +12,8 @@ class DocApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
-      child: MaterialApp(
+ 
+     child: MaterialApp(
         title: "doctors app",
         theme:  ThemeData(
           primaryColor: Themes.defaultColor,
@@ -20,7 +21,7 @@ class DocApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: appRouter.generateRoute,
-        initialRoute: Routes.onboarding,
+        initialRoute: Routes.homePage,
       ), // typical phone size (width x height)
     );
   }
