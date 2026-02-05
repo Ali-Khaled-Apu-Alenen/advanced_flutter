@@ -39,6 +39,11 @@ class TextStyles {
     fontWeight: FontWaightDefault.regular,
     color: Themes.textContentGray,
   );
+  static const TextStyle font12textContentDarkGray = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWaightDefault.regular,
+    color: Themes.textContentDarkGray,
+  );
   static const TextStyle font12TextContentBlueLight = TextStyle(
     fontSize: 12,
     fontWeight: FontWaightDefault.regular,
@@ -48,6 +53,16 @@ class TextStyles {
     fontSize: 16,
     color: Colors.white,
     fontWeight: FontWaightDefault.semiBold,
+  );
+  static const TextStyle font18TextSemiBoldDarkGray = TextStyle(
+    fontSize: 18,
+    color: Themes.darkGray,
+    fontWeight: FontWaightDefault.semiBold,
+  );
+  static const TextStyle font16TextDarkGray = TextStyle(
+    fontSize: 18,
+    color: Themes.darkGray,
+    // fontWeight: FontWaightDefault.semiBold,
   );
   static const TextStyle font18TextMediumWhite = TextStyle(
     fontSize: 18,
