@@ -12,14 +12,16 @@ class DocApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
-      child: MaterialApp(
+ 
+     child: MaterialApp(
         title: "doctors app",
         theme:  ThemeData(
           primaryColor: Themes.defaultColor,
           scaffoldBackgroundColor: Colors.white,
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.onboarding,
+        onGenerateRoute: appRouter.generateRoute,
+        initialRoute: Routes.homePage,
       ), // typical phone size (width x height)
     );
   }
