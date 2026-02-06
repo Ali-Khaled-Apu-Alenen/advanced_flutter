@@ -2,8 +2,8 @@ import 'package:advanced_flutter/core/defult_themes/textstyles.dart';
 import 'package:advanced_flutter/core/defult_themes/themes.dart';
 import 'package:advanced_flutter/core/functions/navigate_context.dart';
 import 'package:advanced_flutter/core/route/routes.dart';
-import 'package:advanced_flutter/features/logic/cubit/login_cubit.dart';
-import 'package:advanced_flutter/features/logic/cubit/login_state.dart';
+import 'package:advanced_flutter/features/login/logic/cubit/login_cubit.dart';
+import 'package:advanced_flutter/features/login/logic/cubit/login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

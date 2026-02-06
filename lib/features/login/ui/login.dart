@@ -1,7 +1,7 @@
 import 'package:advanced_flutter/core/defult_themes/textstyles.dart';
 import 'package:advanced_flutter/core/widgets/buttonwidgetfunc.dart';
-import 'package:advanced_flutter/features/logic/cubit/login_cubit.dart';
-import 'package:advanced_flutter/features/logic/cubit/login_state.dart';
+import 'package:advanced_flutter/features/login/logic/cubit/login_cubit.dart';
+import 'package:advanced_flutter/features/login/logic/cubit/login_state.dart';
 import 'package:advanced_flutter/features/login/data/model/login_request_api.dart';
 import 'package:advanced_flutter/features/login/ui/widgets/contenttext.dart';
 import 'package:advanced_flutter/features/login/ui/widgets/dont_have_account.dart';

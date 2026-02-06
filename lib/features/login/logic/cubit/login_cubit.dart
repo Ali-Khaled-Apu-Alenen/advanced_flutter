@@ -1,5 +1,5 @@
 import 'package:advanced_flutter/core/networking/api_results.dart';
-import 'package:advanced_flutter/features/logic/cubit/login_state.dart';
+import 'package:advanced_flutter/features/login/logic/cubit/login_state.dart';
 import 'package:advanced_flutter/features/login/data/model/login_request_api.dart';
 import 'package:advanced_flutter/features/login/data/repo/login_repo_api.dart';
 import 'package:bloc/bloc.dart';

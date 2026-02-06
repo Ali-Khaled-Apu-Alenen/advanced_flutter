@@ -23,9 +23,10 @@ class DioFactory {
     }
   }
 
-  static void addDioHeaders() async {
+  static void addDioHeaders() {
     dio?.options.headers = {
       'Accept': 'application/json',
+      'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3ZjYXJlLmludGVncmF0aW9uMjUuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzcwMzI3ODY5LCJleHAiOjE3NzA0MTQyNjksIm5iZiI6MTc3MDMyNzg2OSwianRpIjoiUVpaaDdvN3NoUFQzcHc5diIsInN1YiI6IjYzNDUiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.hRUS5szsJFF7rSGY0r8zZ5PxgsVg0QtEesG-Svr_W4k',
       // TODO: Uncomment when SharedPrefHelper is implemented
       // 'Authorization':
       //     'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',

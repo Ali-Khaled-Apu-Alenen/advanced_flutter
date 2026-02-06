@@ -1,8 +1,9 @@
 import 'package:advanced_flutter/core/di/dependency_injection.dart';
 import 'package:advanced_flutter/core/route/routes.dart';
 import 'package:advanced_flutter/features/home/home_page.dart';
+import 'package:advanced_flutter/features/home/logic/cubit/home_cubit.dart';
 import 'package:advanced_flutter/features/login/ui/login.dart';
-import 'package:advanced_flutter/features/logic/cubit/login_cubit.dart';
+import 'package:advanced_flutter/features/login/logic/cubit/login_cubit.dart';
 import 'package:advanced_flutter/features/onboarding/onboarding.dart';
 import 'package:advanced_flutter/features/sign_up/logic/sign_up_cubit.dart';
 import 'package:advanced_flutter/features/sign_up/ui/sign_up.dart';
@@ -10,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
-  Route<dynamic> generateRoute(RouteSettings settings) {
+  Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.onboarding:
         return MaterialPageRoute(builder: (_) => const Onboarding());
@@ -29,13 +30,14 @@ class AppRouter {
           ),
         );
       case Routes.homePage:
-        return MaterialPageRoute(builder: (_) => const HomePage());
-      default:
         return MaterialPageRoute(
-          builder: (_) => Scaffold(
-            body: Center(child: Text('No route defined for ${settings.name}')),
+          builder: (_) => BlocProvider(
+            create: (_) => HomeCubit(getIt())..getSpicalization(),
+            child: const HomePage(),
           ),
         );
+      default:
+        return null;
     }
   }
 }

@@ -1,7 +1,7 @@
 import 'package:advanced_flutter/core/defult_themes/themes.dart';
 import 'package:advanced_flutter/core/helper/app_regex.dart';
 import 'package:advanced_flutter/core/widgets/text_form_func.dart';
-import 'package:advanced_flutter/features/logic/cubit/login_cubit.dart';
+import 'package:advanced_flutter/features/login/logic/cubit/login_cubit.dart';
 import 'package:advanced_flutter/features/login/ui/widgets/password_validattes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
