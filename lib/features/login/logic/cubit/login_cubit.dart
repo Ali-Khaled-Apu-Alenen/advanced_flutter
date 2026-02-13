@@ -1,4 +1,7 @@
+import 'package:advanced_flutter/core/helper/constatnts.dart';
+import 'package:advanced_flutter/core/helper/shared_preferences_helper.dart';
 import 'package:advanced_flutter/core/networking/api_results.dart';
+import 'package:advanced_flutter/core/networking/dio_factory.dart';
 import 'package:advanced_flutter/features/login/logic/cubit/login_state.dart';
 import 'package:advanced_flutter/features/login/data/model/login_request_api.dart';
 import 'package:advanced_flutter/features/login/data/repo/login_repo_api.dart';
@@ -32,8 +35,8 @@ class LoginCubit extends Cubit<LoginState> {
       ),
     );
     response.when(
-      success: (loginResponse) {
-        // await saveUserToken(loginResponse.userData?.token ?? '');
+      success: (loginResponse) async{
+        await saveUserToken(loginResponse.userData?.token ?? '');
         emit(LoginState.success(loginResponse));
       },
       failure: (error) {
@@ -41,9 +44,8 @@ class LoginCubit extends Cubit<LoginState> {
       },
     );
   }
-
-  // Future<void> saveUserToken(String token) async {
-  //   await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);
-  //   DioFactory.setTokenIntoHeaderAfterLogin(token);
-  // }
+ Future<void> saveUserToken(String token) async {
+    await SharedPreferencesHelper.setData(SharedPrefKeys.userTokenKey, token);
+    DioFactory.setTokenIntoHeaderAfterLogin(token);
+  }
 }

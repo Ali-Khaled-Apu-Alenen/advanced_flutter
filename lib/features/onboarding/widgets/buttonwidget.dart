@@ -1,4 +1,5 @@
 import 'package:advanced_flutter/core/defult_themes/themes.dart';
+import 'package:advanced_flutter/core/helper/shared_preferences_helper.dart';
 import 'package:advanced_flutter/core/route/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,6 +13,7 @@ class Buttonwidget extends StatelessWidget {
       width: 311.w,
       child: ElevatedButton(
         onPressed: () {
+          SharedPreferencesHelper.setData("savedOnboarding", true);
           Navigator.pushNamed(context, Routes.loginpage);
         },
         style: ElevatedButton.styleFrom(
